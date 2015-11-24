@@ -110,6 +110,15 @@ $(function(){
                 $nickBox.val('');
     });
     
+     //List of users
+        socket.on('usernames', function(message){
+            var html = '';
+            for(i=0; i < message.length; i++){
+                html+= message[i] + '<br/>'
+            }
+            
+        });
+    
 });
 
 </script>
