@@ -111,7 +111,7 @@ $(function(){
                 $nickBox.val('');
     });
     
-     //List of users
+        //List of users
         socket.on('usernames', function(message){
             var html = '';
             for(i=0; i < message.length; i++){
