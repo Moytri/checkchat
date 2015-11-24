@@ -2,12 +2,13 @@
 var express=require('express'),
     app=express(),
     server=require('http').createServer(app),
-    io=require('socket.io').listen(server);
+    io=require('socket.io').listen(process.env.PORT);
+   server.listen(process.env.PORT || 8000);
     
     // usernames which are currently connected to the chat
     var nicknames=[];
 
-    server.listen(8000);
+   // server.listen(8000);
 
     //requesting localhost to connect to index.html
     app.get('/', function(req, res){
