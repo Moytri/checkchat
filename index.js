@@ -26,18 +26,6 @@ var express=require('express'),
            }
         });
         
-        function updateNicknames(){
-            io.sockets.emit('usernames', nicknames);
-        }
 
-        socket.on('send message', function(message){
-            io.sockets.emit('new message', {msg: message, nick: socket.nickname});
-        });
-
-        socket.on('disconnect', function(message){
-            if(!socket.nickname) return;
-            nicknames.splice(nicknames.indexOf(socket.nickname), 1);
-            updateNicknames();
-        }); 
         
     });
