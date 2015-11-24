@@ -17,6 +17,8 @@ var express=require('express'),
     io.sockets.on('connection', function(socket){
         socket.on('new user',function(message,callback)
         {
+            
+            // if the newly entered username already exists in array return false,othersise push it into the array
            if(nicknames.indexOf(message)!=-1) {
                callback(false);
            }else {
