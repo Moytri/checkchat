@@ -3,6 +3,8 @@ var express=require('express'),
     app=express(),
     server=require('http').createServer(app),
     io=require('socket.io').listen(server);
+    
+    // usernames which are currently connected to the chat
     var nicknames=[];
 
     server.listen(8000);
