@@ -91,6 +91,7 @@ $(function(){
     var $messageForm=$('#send-message');
     var $messageBox=$('#message');
     var $chat=$('#chat');
+    var i;
     
     /*Here we are checking the validity of username.To do so a callback function is created.
     If the username is valid then we will display the chat box, otherwise an error message is shown.
@@ -116,7 +117,7 @@ $(function(){
             for(i=0; i < message.length; i++){
                 html+= message[i] + '<br/>'
             }
-             $users.append(html);
+             $users.html(html);
         });
     
 });
