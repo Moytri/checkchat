@@ -119,6 +119,17 @@ $(function(){
             }
              $users.html(html);
         });
+        
+        
+         $messageForm.submit(function(e){
+            e.preventDefault();
+            socket.emit('send message', $messageBox.val());
+            $messageBox.val('');
+        });
+
+        socket.on('new message', function(message){
+            $chat.append('<span class="glyphicon glyphicon-user"></span>'+"   "+'<b>' + message.nick +  ' : </b>'+ message.msg + "<br/>");
+        });
     
 });
 
