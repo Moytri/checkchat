@@ -2,8 +2,8 @@ var express=require('express'),
     app=express(),
     server=require('http').createServer(app),
     io=require('socket.io').listen(server);
-    server.listen(process.env.PORT || 8000, process.env.IP || '192.168.1.105')
-    //server.listen(15454 || '192.168.1.105');
+    server.listen(process.env.PORT, process.env.IP);
+    
    
     // server.listen(8000);
     
