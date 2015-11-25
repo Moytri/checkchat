@@ -1,15 +1,15 @@
-
 var express=require('express'),
     app=express(),
     server=require('http').createServer(app),
-    io=require('socket.io');
-   server.listen(process.env.PORT || 15454);
+    io=require('socket.io').listen(server);
+    server.listen(process.env.PORT || 8000, process.env.IP || '192.168.1.105')
+    //server.listen(15454 || '192.168.1.105');
    
-   // server.listen(8000);
+    // server.listen(8000);
     
     //requesting localhost to connect to index.html
     app.get('/', function(req, res){
-        res.sendfile(__dirname+'/index.html');
+        res.sendFile(__dirname+'/index.html');
     });
     
     
@@ -19,7 +19,6 @@ var express=require('express'),
     io.sockets.on('connection', function(socket){
         socket.on('new user',function(message,callback)
         {
-            
             // if the newly entered username already exists in array return false,othersise push it into the array
            if(nicknames.indexOf(message)!=-1) {
                callback(false);
