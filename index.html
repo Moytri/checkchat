@@ -14,17 +14,17 @@
     background: #e5f2fa;
     height:750px ;
     min-width: 150px;
-}
+    }
 
-.row  {
+    .row  {
     margin-bottom: 0px;
     min-width: 150px;
-}
-.navbar{
+    }
+    .navbar{
     background: #6cabdd;
     min-width: 150px;
-}
-h3{
+    }
+    h3{
     font-family:"Times New Roman", Times, serif;
     font-size:24px;
     margin-left: 400px;
@@ -33,10 +33,10 @@ h3{
     min-width: 150px;
     text-align:center;
 
-}
+    }
 
-</style>
-<style type="text/css">
+    </style>
+    <style type="text/css">
      .col-xs-9{
             margin-left: 300px;
         }
@@ -62,7 +62,7 @@ h3{
         
          #contentWrap{
                 display: none;
-        }
+            }
 
         #chatWrap{
             margin-top: 20px;
@@ -70,12 +70,10 @@ h3{
             margin-right: 120px;
             border: 1px #ffffff solid;
 
-
         }
         #chat{
             height:600px;
         }
-
 
         .col-lg-6,.col-lg-3,.panel{
             height:600px;
@@ -86,9 +84,7 @@ h3{
             margin-left: 0px;
         }
 
-
-
-</style>
+    </style>
     </head>
     
     
@@ -102,14 +98,14 @@ h3{
 		<nav role="navigation" class="navbar navbar-default">
                 <div class="navbar-header">
                     <h3>Fifteen Minutes Chat Messanger</h3>
-			</div>
-            </nav>
+			    </div>
+        </nav>
 	    </div>
-	</div>
+	    </div>
 		<!--end Navbar-->
 	
 	  <!--Form to enter UserName-->
-	<div class="row">
+	    <div class="row">
 
 		<div class="col-xs-9" id="nickWrap" >
 			   <p id="nickError"></p>
@@ -119,23 +115,23 @@ h3{
                        <i class="glyphicon glyphicon-user"></i>
                        <input id="nickname" class="form-control" placeholder="Username"/>
                        </div>
-				 </div>
-			<div class="col-xs-3"><input type="submit" class="btn btn-primary"></div>
-                      
-			 </form>
-             </div>
-       </div>
+        		 </div>
+        		 
+		    	<div class="col-xs-3"><input type="submit" class="btn btn-primary"></div>
+                </form>
+         </div>
+          </div>
          <!--end username-->
-    
-    <!--Message-->
+
+        <!--Message-->
        
-       <div id="contentWrap">
+           <div id="contentWrap">
                 <div id="chatWrap">
                     <div class="row">
 
                     <div class="col-lg-3">
                         <div class="panel panel-default">
-                            <div class="panel-heading"><center>Username</center></div>
+                        <div class="panel-heading"><center>Username</center></div>
                         <div class="panel-body" id="users"></div>
                     </div>
                     </div>
@@ -148,13 +144,9 @@ h3{
                     </div>
 
                     </div>
-
-
-
-            </div>
-        <!--</div>-->
-    <!--</div>-->
- </div>
+                </div>
+       
+         </div>
 <!--End of Message box-->
  
  </div>  <!--End of container-->
@@ -192,16 +184,16 @@ h3{
                 }else {
                     $nickError.html('Username already in use. Try another name.');
                 }
+                });
+                    $nickBox.val('');
             });
-            $nickBox.val('');
-        });
 
-        //List of users
+            //List of users
         socket.on('usernames', function(message){
             var html = '';
             for(i=0; i < message.length; i++){
                 html+= message[i] + '<br/>'
-            }
+                }
             $users.html(html);
             //$showName.append(html);
         });
@@ -216,10 +208,7 @@ h3{
         socket.on('new message', function(message){
             $chat.append('<span class="glyphicon glyphicon-user"></span>'+"   "+'<b>' + message.nick +  ' : </b>'+ message.msg + "<br/>");
         });
-    });
-</script>
-
-
-
+     });
+    </script>
     </body>
 </html>
