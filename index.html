@@ -11,6 +11,8 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     
     <style>
+    
+    /*this style tag indicates css for navigation*/
 	
 	.container{
     background: #e5f2fa;
@@ -172,10 +174,10 @@
         var $chat=$('#chat');
         var i;
         
-         // <!-- Here we are checking the validity of username.To do so a callback function is created.-->
-    //  <!--If the username is valid then we will display the chat box, otherwise an error message is shown.-->
-   //  <!-- Here a callback comes in.Nickname is sent from server and pass it to our function socket.emit.-->
-     //<!-- Afterwards changes have made depending on the value of that data.-->
+         /* Here we are checking the validity of username.To do so a callback function is created.
+            If the username is valid then we will display the chat box, otherwise an error message is shown.
+             Here a callback comes in.Nickname is sent from server and pass it to our function socket.emit.
+            Afterwards changes have made depending on the value of that data.*/
 
         $nickForm.submit(function(e){
             e.preventDefault();
