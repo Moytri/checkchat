@@ -1,3 +1,4 @@
+/*jshint curly:true, debug:true */
 var express = require('express'),
 	app = express(),
 	server = require('http').createServer(app),

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+       
         <title>A Chat Messenger</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -163,8 +164,10 @@
 
 
 <script>
+
+ /*jshint curly:true, debug:true */
     $(function(){
-        var socket = require('socket.io').connect("https://checkchat-moytri.c9users.io");
+        var socket = require('socket.io').connect("https://checkchat-moytri.c9users.io:8080");
         var $nickForm=$('#setNick');
         var $nickError=$('#nickError');
         var $nickBox=$('#nickname');
