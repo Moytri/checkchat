@@ -3,7 +3,7 @@ var express = require('express'),
 	app = express(),fs = require('fs'),
 	server = require('http').createServer(app),
 	io = require('socket.io').listen(server);
-    server.listen(Number(process.env.PORT||8080));
+    server.listen(process.env.PORT);
     
     // server.listen(8000);
     
