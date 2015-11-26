@@ -159,8 +159,8 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
+<!--<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
 <script src="https://checkchat-moytri.c9users.io/socket.io/socket.io.js"></script>
 
 
@@ -168,7 +168,7 @@
 
  /*jshint curly:true, debug:true */
     $(function(){
-        var socket = require('socket.io').connect();
+        var socket = require('socket.io').connect("https://checkchat-moytri.c9users.io/socket.io/socket.io.js");
         var $nickForm=$('#setNick');
         var $nickError=$('#nickError');
         var $nickBox=$('#nickname');
