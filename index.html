@@ -85,7 +85,7 @@
         }
         .col-lg-3,.panel{
             width: 180px;
-            border: 1px #ffffff solid;
+            /*border: 1px #ffffff solid;*/
             margin-left: 0px;
         }
 
@@ -162,14 +162,14 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="https://https://checkchat-moytri.c9users.io/socket.io/socket.io.js"></script>
+<script src="https://checkchat-moytri.c9users.io/socket.io/socket.io.js"></script>
 
 
 <script>
 
  /*jshint curly:true, debug:true */
     $(function(){
-        var socket = require('socket.io').connect("https://checkchat-moytri.c9users.io:8080");
+        var socket = require('socket.io').connect();
         var $nickForm=$('#setNick');
         var $nickError=$('#nickError');
         var $nickBox=$('#nickname');
