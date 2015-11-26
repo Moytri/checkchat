@@ -7,7 +7,7 @@ var express = require('express'),
     
     // server.listen(8000);
     
-    //requesting localhost to connect to index.html
+    //requesting to connect to index.html
     app.get('/', function(req, res){
         res.sendFile(__dirname+'/index.html');
     });
