@@ -24,7 +24,7 @@ To complete it I use the following tools :
 7. CSS (bootstrap3)
 8. MongoDB
 
-## Support
+## Supports
 - [Getting Started with Cloud9](https://docs.c9.io/docs/getting-started)
 - [Get Started: Chat application](http://socket.io/get-started/chat/)
 - [Learn node.js from scratch](https://www.udemy.com/learn-nodejs-from-scratch2/learn/#/)
@@ -32,7 +32,7 @@ To complete it I use the following tools :
 - [Stack Overflow](http://stackoverflow.com/questions/20579747/node-js-and-socket-io-dont-work-on-cloud9-ide)
 - [Getting Started With MongoDB](https://docs.mongodb.org/getting-started/node/client/)
 - [mongoose](https://github.com/Automattic/mongoose)
-- [Head First jQuery](http://cdn.oreillystatic.com/oreilly/booksamplers/9781449393212_sampler.pdf)
+- [Head First jQuery by Ryan Benedetti & Ronan Cranley](http://cdn.oreillystatic.com/oreilly/booksamplers/9781449393212_sampler.pdf)
 - [gittutorial - A tutorial introduction to Git](http://git-scm.com/docs/gittutorial)
 
 
