@@ -30,6 +30,7 @@ To complete it I use the following tools :
 - [Learn node.js from scratch](https://www.udemy.com/learn-nodejs-from-scratch2/learn/#/)
 - [Express](http://expressjs.com/en/starter/installing.html)
 - [Stack Overflow](http://stackoverflow.com/questions/20579747/node-js-and-socket-io-dont-work-on-cloud9-ide)
+- [CODE PROJECT](http://www.codeproject.com/Articles/777640/Simple-chat-application-using-NodeJS-and-Socket-IO)
 - [Getting Started With MongoDB](https://docs.mongodb.org/getting-started/node/client/)
 - [mongoose](https://github.com/Automattic/mongoose)
 - [Head First jQuery - Ryan Benedetti & Ronan Cranley](http://cdn.oreillystatic.com/oreilly/booksamplers/9781449393212_sampler.pdf)
