@@ -11,7 +11,9 @@ var express = require('express'),
             console.log('Server listening at port %d', port);
         });
         
-            var mongoose = require('mongoose');
+        
+        /*  Connect to mongodb by requiring moongose module */
+           var mongoose = require('mongoose');
              
 
           mongoose.connect('mongodb://localhost/test', function(err,db){
@@ -22,11 +24,20 @@ var express = require('express'),
 		             db.close();
 	            }
         });
+        
+        /* Craete mongodb Schema */
+            var chatSchema = mongoose.Schema({
+        	    nick: String,
+        	    msg: String,
+	            created: {type: Date, default: Date.now}
+            });
+
+            var Chat = mongoose.model('Message', chatSchema);
+
 
         
         // var MongoClient = require('mongodb').MongoClient;
         // var assert = require('assert');
-        
         // var url = 'mongodb://localhost/test';
         // MongoClient.connect(url, function(err, db) {
         //  assert.equal(null, err);
