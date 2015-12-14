@@ -92,83 +92,81 @@
     </head>
     
     
-    <body>
-        <!--container holds everything-->
-        <div class="container">
-
-	<!--Start Navbar-->
-      <div class="row">
+   <body>
+<!--container holds everything-->
+<div class="container">
+    <!--Start Navbar-->
+    <div class="row">
         <div class="col-lg-12">
-		<nav role="navigation" class="navbar navbar-default">
+            <nav role="navigation" class="navbar navbar-default">
                 <div class="navbar-header">
                     <h3>Fifteen Minutes Chat Messanger</h3>
-			    </div>
-        </nav>
-	    </div>
-	    </div>
-		<!--end Navbar-->
-	
-	  <!--Form to enter UserName-->
-	    <div class="row">
+                </div>
+            </nav>
+        </div>
+    </div>
 
-		<div class="col-xs-9" id="nickWrap" >
-			   <p id="nickError"></p>
-			   <form id="setNick">
-				 <div class="col-xs-6">
-				 <div class="inner-addon left-addon">
-                       <i class="glyphicon glyphicon-user"></i>
-                       <input id="nickname" class="form-control" placeholder="Username"/>
-                       </div>
-        		 </div>
-        		 
-		    	<div class="col-xs-3"><input type="submit" class="btn btn-primary"></div>
-                </form>
-         </div>
-          </div>
-         <!--end username-->
 
-        <!--Message-->
-       
-           <div id="contentWrap">
-                <div id="chatWrap">
-                    <div class="row">
+    <!--Start Set UserName-->
+    <div class="row">
 
-                    <div class="col-lg-3">
-                        <div class="panel panel-default">
+        <div class="col-xs-9" id="nickWrap" >
+            <p id="nickError"></p>
+            <form id="setNick">
+                <div class="col-xs-6">
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input id="nickname" class="form-control" placeholder="Username"/>
+                    </div>
+                </div>
+                <div class="col-xs-3"><input type="submit" class="btn btn-primary"></div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <div id="contentWrap">
+        <div id="chatWrap">
+            <div class="row">
+
+                <div class="col-lg-3">
+                    <div class="panel panel-default">
                         <div class="panel-heading"><center>Username</center></div>
                         <div class="panel-body" id="users"></div>
                     </div>
-                    </div>
-                        <div class="col-lg-6" style="width:700px">
-                        <div id="chat"></div>
-                        <form id="send-message">
-                            <input id="message" size="80" autocomplete="off" placeholder="Write Message" style="height: 30px">
-                            <input type="submit" class="btn btn-default btn" />
-                        </form>
-                    </div>
-
-                    </div>
                 </div>
-       
-         </div>
-<!--End of Message box-->
- 
- </div>  <!--End of container-->
- 
- <!--node.js and Jquery code-->
+                <div class="col-lg-6" style="width:700px">
+                    <div id="chat"></div>
+                    <form id="send-message">
+                        <input id="message" size="80" autocomplete="off" placeholder="Write Message" style="height: 30px">
+                        <input type="submit" class="btn btn-default btn" />
+                    </form>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
 
 <script src="/socket.io/socket.io.js"></script>
+<script src="https://127.0.0.1:8080/cdn.socket.io/socket.io-1.3.7.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
-<!--<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
-<script src="https://checkchat-moytri.c9users.io/socket.io/socket.io.js"></script>
+<script src="checkchat-moytri.c9users.io/socket.io/socket.io.js"></script>
+
+
 
 
 <script>
-
- /*jshint curly:true, debug:true */
     $(function(){
-        var socket = require('socket.io').connect("https://checkchat-moytri.c9users.io/socket.io/socket.io.jssudo kill -9 <PID>");
+        //var socket = require('socket.io').connect("https://checkchat-moytri.c9users.io");
+        var socket =require('socket.io').connect('checkchat-moytri.c9users.io');
+ 
         var $nickForm=$('#setNick');
         var $nickError=$('#nickError');
         var $nickBox=$('#nickname');
@@ -178,10 +176,10 @@
         var $chat=$('#chat');
         var i;
         
-         /* Here we are checking the validity of username.To do so a callback function is created.
+        /* Here we are checking the validity of username.To do so a callback function is created.
             If the username is valid then we will display the chat box, otherwise an error message is shown.
              Here a callback comes in.Nickname is sent from server and pass it to our function socket.emit.
-            Afterwards changes have made depending on the value of that data.*/
+            Afterwards changes have made depending on the value of that data.  */
 
         $nickForm.submit(function(e){
             e.preventDefault();
@@ -192,17 +190,17 @@
                 }else {
                     $nickError.html('Username already in use. Try another name.');
                 }
-                });
-                    $nickBox.val('');
             });
+            $nickBox.val('');
+        });
 
-            //List of users
+        //List of users
         socket.on('usernames', function(message){
             var html = '';
             for(i=0; i < message.length; i++){
                 html+= message[i] + '<br/>'
-                }
-            $users.html(html);
+            }
+            $users.html('<b>' +" "+ html);
             //$showName.append(html);
         });
 
@@ -216,7 +214,8 @@
         socket.on('new message', function(message){
             $chat.append('<span class="glyphicon glyphicon-user"></span>'+"   "+'<b>' + message.nick +  ' : </b>'+ message.msg + "<br/>");
         });
-     });
-    </script>
-    </body>
+    });
+</script>
+
+</body>
 </html>

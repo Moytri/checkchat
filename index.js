@@ -1,17 +1,28 @@
 /*jshint curly:true, debug:true */
 var express = require('express'),
-	app = express(),fs = require('fs'),
+	app = express(),
 	server = require('http').createServer(app),
 	io = require('socket.io').listen(server);
-    server.listen(process.env.PORT);
+    //server.listen(process.env.PORT);
+    
+    var port = process.env.PORT || 8080;
+
+    server.listen(port, function () {
+            console.log('Server listening at port %d', port);
+        });
     
     // server.listen(8000);
     
     //requesting to connect to index.html
     app.get('/', function(req, res){
         res.sendFile(__dirname+'/index.html');
+        
+        req.on("error",function(error){
+        console.error(error.port);
+    });
     });
     
+   
     /*Another way for server connection 
     
     var fs = require('fs');
