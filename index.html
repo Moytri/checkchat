@@ -42,50 +42,50 @@
 
     </style>
     <style type="text/css">
-     .col-xs-9{
-            margin-left: 300px;
-        }
-        /* enable absolute positioning */
-        .inner-addon {
-            position: relative;
+    .col-xs-9{
+    margin-left: 300px;
+    }
+    /* enable absolute positioning */
+    .inner-addon {
+    position: relative;
+    }
+
+    /* style icon */
+    .inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
         }
 
-        /* style icon */
-        .inner-addon .glyphicon {
-            position: absolute;
-            padding: 10px;
-            pointer-events: none;
-        }
+    /* align icon */
+    .left-addon .glyphicon  { left:  0px;}
+    .right-addon .glyphicon { right: 0px;}
 
-        /* align icon */
-        .left-addon .glyphicon  { left:  0px;}
-        .right-addon .glyphicon { right: 0px;}
-
-        /* add padding  */
-        .left-addon input  { padding-left:  30px; }
-        .right-addon input { padding-right: 30px; }
+    /* add padding  */
+    .left-addon input  { padding-left:  30px; }
+    .right-addon input { padding-right: 30px; }
         
-         #contentWrap{
-                display: none;
+    #contentWrap{
+     display: none;
             }
 
-        #chatWrap{
-            margin-top: 20px;
-            margin-left: 120px;
-            margin-right: 120px;
-            border: 1px #ffffff solid;
+    #chatWrap{
+    margin-top: 20px;
+    margin-left: 120px;
+    margin-right: 120px;
+    border: 1px #ffffff solid;
 
-        }
-        #chat{
-            height:600px;
+    }
+    #chat{
+    height:600px;
         }
 
-        .col-lg-6,.col-lg-3,.panel{
-            height:600px;
+    .col-lg-6,.col-lg-3,.panel{
+     height:600px;
         }
-        .col-lg-3,.panel{
-            width: 180px;
-            margin-left: 0px;
+    .col-lg-3,.panel{
+     width: 180px;
+     margin-left: 0px;
         }
 
     </style>
@@ -155,12 +155,9 @@
 
 
 <script src="/socket.io/socket.io.js"></script>
-<script src="https://127.0.0.1:8080/cdn.socket.io/socket.io-1.3.7.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="checkchat-moytri.c9users.io/socket.io/socket.io.js"></script>
-
-
-
+<script src="https://127.0.0.1:8080/cdn.socket.io/socket.io-1.3.7.js"></script>
 
 <script>
     $(function(){

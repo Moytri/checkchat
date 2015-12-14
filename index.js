@@ -10,16 +10,40 @@ var express = require('express'),
     server.listen(port, function () {
             console.log('Server listening at port %d', port);
         });
+        
+            var mongoose = require('mongoose');
+             
+
+          mongoose.connect('mongodb://localhost/test', function(err,db){
+	        if(err){
+	            	console.log(err);
+            	} else{
+		            console.log('Connected to mongodb!');
+		             db.close();
+	            }
+        });
+
+        
+        // var MongoClient = require('mongodb').MongoClient;
+        // var assert = require('assert');
+        
+        // var url = 'mongodb://localhost/test';
+        // MongoClient.connect(url, function(err, db) {
+        //  assert.equal(null, err);
+        // console.log("Connected correctly to server.");
+        //     db.close();
+        // });
     
     // server.listen(8000);
     
     //requesting to connect to index.html
+    // Routing
     app.get('/', function(req, res){
         res.sendFile(__dirname+'/index.html');
         
-        req.on("error",function(error){
-        console.error(error.port);
-    });
+    //     req.on("error",function(error){
+    //     console.error(error.port);
+    // });
     });
     
    

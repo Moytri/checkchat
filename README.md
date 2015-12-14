@@ -1,5 +1,5 @@
-# Chat Messanger using node.js and Socket.io
-This is a Chat Messanger. 
+# Chat Messenger using node.js and Socket.io
+This is a simple Chat Messenger. 
 
 ## Way to use
 
